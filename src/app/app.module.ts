@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { SharedModule } from './shared/shared.module';
+import { SearchModule } from './search/search.module';
+
 
 
 
@@ -22,7 +24,9 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    SearchModule
+
 
   ],
   providers: [],
