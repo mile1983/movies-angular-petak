@@ -15,12 +15,14 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     LayoutComponent,
     MoviesComponent,
+   
   
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
 
   ],
   providers: [],
