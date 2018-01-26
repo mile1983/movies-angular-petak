@@ -15,7 +15,7 @@
     </li>
     <li class="list-group-item">
         <small>
-            {{ movieRow.releseDate }}
+            {{ movieRow.releseDate | date:'dd/mm/yyyy'}}
         </small>
     </li>
     <li class="list-group-item">
@@ -23,5 +23,7 @@
             {{ movieRow.genres }}
         </small>
     </li>
+    <button class="btn btn-secondary" (click)="addMovie(true)" [disabled]="voted">Click me</button>
+    
     <hr>
 </ul>

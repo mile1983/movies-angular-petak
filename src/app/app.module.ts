@@ -7,6 +7,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { SharedModule } from './shared/shared.module';
 import { SearchModule } from './search/search.module';
+import { OrderModule } from 'ngx-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -25,7 +27,11 @@ import { SearchModule } from './search/search.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    SearchModule
+    SearchModule,
+    OrderModule,
+    NgxPaginationModule
+
+
 
 
   ],

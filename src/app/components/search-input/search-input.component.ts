@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-search-input',
@@ -6,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchInputComponent implements OnInit {
 
-    constructor() { }
+    private searchName: string;
+    
+        constructor(private router: Router) { }
+    
 
     ngOnInit() {
+        
     }
+    searchMovie(term) {
+        this.router.navigate(['/search', this.searchName]);
+    }
+    
 
 }

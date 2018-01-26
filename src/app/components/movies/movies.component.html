@@ -1,6 +1,27 @@
 <div class="container">
   <hr>
-  <app-movie-row *ngFor="let movie of movies" [movieRow]="movie">
-  </app-movie-row>
+  <p>Trenutno je selektovano: {{ counter }} filmova</p>
+  <hr>
+  <button class="btn btn-primary" (click)="selectedAll = false; selectedAny = false;" (click)="deselectAllCounter()">
+    Reset
+</button>
+<button class="btn btn-primary" (click)="selectedAll = true" (click)="selectAllCounter()">
+    Select all
+</button>
+<button class="btn btn-primary" [class.active]="order === 'name'" (click)="setOrder('name')">
+  Sort by name
+</button>
+<button class="btn btn-primary" [class.active]="order === 'duration'" (click)="setOrder('duration')">
+  Sort by duration
+</button>
+
+<hr>
+<app-movie-row (onVoted)="onVoted($event)" [selectedAny]="selectedAny" [selectedAll]="selectedAll" *ngFor="let movie of movies | paginate: { itemsPerPage: 5, currentPage: p } | orderBy: order : reverse"
+[movieRow]="movie">
+</app-movie-row>
+
+<hr>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
 </div>
 <router-outlet></router-outlet>
